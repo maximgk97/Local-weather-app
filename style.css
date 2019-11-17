@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -10,22 +9,48 @@ body {
     justify-content: center;
     flex-direction: column;
     align-content: center;
-    background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+    background: linear-gradient(#311847, #3EB9E6);
     font-family: sans-serif;
     color: white;
 }
 
-.location,
-.temperature {
-    height: 30vh;
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: sans-serif;
+}
+
+.location {
+    
     width: 50%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 2rem;
+}
+
+.location-timezone {
+    color: white;
+    font-size: 50px;
 }
 
 .temperature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
     flex-direction: column;
+}
+
+.temperature-description {
+    text-align: center;
+    color: white;
 }
 
 .degree-section {
@@ -41,4 +66,27 @@ body {
 
 .degree-section h2 {
     font-size: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .location {
+        display: inline-block;
+        width:70%;
+    }
+
+    .container .location .icon {
+        position: relative;
+        left: 30%;
+    }
+
 }

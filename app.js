@@ -22,7 +22,7 @@ window.addEventListener('load', ()=> {
             .then(data => {
                 const {temperature,summary, icon} = data.currently;
                 //Set DOM Elements from the API
-                temperatureDegree.textContent = temperature;
+                temperatureDegree.textContent = Math.floor(temperature);
                 temperatureDescription.textContent = summary;
                 locationTimezone.textContent = data.timezone;
                     //Formula for Celsius 
@@ -37,7 +37,7 @@ window.addEventListener('load', ()=> {
                             temperatureDegree.textContent =  Math.floor(celsius);
                         } else {
                             temperatureSpan.textContent = "F";
-                            temperatureDegree.textContent = temperature;
+                            temperatureDegree.textContent = Math.floor(temperature);
                         }
                     })
             });
@@ -45,8 +45,7 @@ window.addEventListener('load', ()=> {
 
 
 
-    }
-    
+    }    
     
     function setIcons(icon, iconID) {
         const skycons = new Skycons({color: "white"});
